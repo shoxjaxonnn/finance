@@ -265,6 +265,7 @@ a:focus {
   align-items: center;
   position: relative;
   padding: 45px 0 145px 0;
+  overflow-x: hidden;
 }
 
 .slider_section .row {
