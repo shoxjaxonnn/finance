@@ -1,15 +1,15 @@
-// to get current year
-function getYear() {
+document.addEventListener("DOMContentLoaded", () => {
+  // to get current year
+  function getYear() {
     var currentDate = new Date();
     var currentYear = currentDate.getFullYear();
     document.querySelector("#displayYear").innerHTML = currentYear;
-}
+  }
 
-getYear();
+  getYear();
 
-
-// client section owl carousel
-$(".client_owl-carousel").owlCarousel({
+  // client section owl carousel
+  $(".client_owl-carousel").owlCarousel({
     loop: true,
     margin: 20,
     dots: false,
@@ -18,32 +18,35 @@ $(".client_owl-carousel").owlCarousel({
     autoplay: true,
     autoplayHoverPause: true,
     navText: [
-        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+      '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+      '<i class="fa fa-angle-right" aria-hidden="true"></i>'
     ],
     responsive: {
-        0: {
-            items: 1
-        },
-        600: {
-            items: 2
-        },
-        1000: {
-            items: 2
-        }
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 2
+      }
     }
+  });
+//   alert email
+
+document.getElementById('subscribeForm').addEventListener('submit' ,function(event){
+    event.preventDefault()// sahifa yangilanmasligi uchun
+
+    let email = document.getElementById('emailInput').value;
+
+    if( email === "" ){
+        alert('Iltimos emailingizni kiriting')
+        return;
+    }
+    alert(`Emailingiz jonatildi : ${email}`)
+
+    document.getElementById('subscribeForm').reset()
+    console.log(email);
+})
 });
-
-
-
-/** google_map js **/
-function myMap() {
-    var mapProp = {
-        center: new google.maps.LatLng(40.712775, -74.005973),
-        zoom: 18,
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-}
-
-// slider
-
